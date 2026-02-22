@@ -50,8 +50,11 @@ for h in args.hashtags:
 plt.xlabel("Day of year (2020)")
 plt.ylabel("Tweet count (log scale, +1)")
 plt.yscale("log")
-
+from matplotlib.ticker import ScalarFormatter
+plt.gca().yaxis.set_major_formatter(ScalarFormatter())
+plt.gca().ticklabel_format(style='plain', axis='y')
 plt.legend()
+
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
 plt.savefig(args.out, dpi=200)
