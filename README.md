@@ -7,11 +7,11 @@ The mapper scans each day of tweets and extracts hashtag usage by both language 
 
 ## Results
 
-### English hashtag (#coronavirus)
+## English hashtag (#coronavirus)
 ![Top languages](plots/all.lang__%23coronavirus__count.png)
 ![Top countries](plots/all.country__%23coronavirus__count.png)
 
-### Korean hashtag (#코로나바이러스)
+## Korean hashtag (#코로나바이러스)
 ![Top languages](plots/all.lang__%23%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4__count.png)
 ![Top countries](plots/all.country__%23%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4__count.png)
 
