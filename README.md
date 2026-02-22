@@ -1,39 +1,26 @@
-# Coronavirus Twitter Analysis (2020)
+# Coronavirus Twitter MapReduce Analysis
 
-This project analyzes **~1.1 billion geotagged tweets from 2020** using a MapReduce-style pipeline to measure how COVID-related hashtags spread across **languages** and **countries**.
+## Project Overview
+This project analyzes 1.1 billion geotagged tweets from 2020 to study how discussion of COVID-19 spread across languages, countries, and time. Because the dataset is too large for traditional analysis, I implemented a parallel MapReduce pipeline in Python and Bash on a multi-processor server.
 
-## What I built
-
-### Map step (parallelized)
-- For each day in 2020, I scan all geotagged tweets (stored as daily zip files).
-- I count hashtag usage by:
-  - **Language** (`.lang` outputs)
-  - **Country** via `tweet["place"]["country_code"]` when available (`.country` outputs)
-- The mapper is robust to missing location fields (e.g., tweets without `country_code`).
-
-### Reduce step
-- I aggregate all daily `.lang` outputs into `outputs/all.lang`
-- I aggregate all daily `.country` outputs into `outputs/all.country`
-
-### Visualization
-- I generate top-10 bar charts for hashtag usage across languages and countries.
-- I also generate a time-series plot showing daily hashtag usage over the year.
+The mapper scans each day of tweets and extracts hashtag usage by both language and country. The reducer aggregates the daily outputs into global statistics. Finally, visualization scripts generate interpretable plots.
 
 ## Results
 
-### Top languages and countries for #coronavirus
-![Top languages for #coronavirus](plots/lang_coronavirus.png)
-![Top countries for #coronavirus](plots/country_coronavirus.png)
+### English hashtag (#coronavirus)
+![Top languages](plots/all.lang__%23coronavirus__count.png)
+![Top countries](plots/all.country__%23coronavirus__count.png)
 
-### Top languages and countries for #코로나바이러스
-![Top languages for #코로나바이러스](plots/lang_korean_hashtag.png)
-![Top countries for #코로나바이러스](plots/country_korean_hashtag.png)
+### Korean hashtag (#코로나바이러스)
+![Top languages](plots/all.lang__%23%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4__count.png)
+![Top countries](plots/all.country__%23%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4__count.png)
 
-### Hashtag usage over time (2020)
-![Hashtag time series](plots/hashtag_timeseries.png)
+### Hashtag usage over time
+![Time series](plots/hashtag_timeseries.png)
 
-## Tech used
-- Python (json, zipfile, collections)
-- MapReduce design pattern (map → reduce)
-- Parallel job control with `nohup`, background jobs, and `tmux`
-- Matplotlib for plotting
+## Key Findings
+The English hashtag appears globally across many languages, while the Korean hashtag is overwhelmingly used in Korean tweets.
+
+Country plots show Korean hashtag usage concentrated in South Korea, while English usage is globally distributed.
+
+Hashtag usage spikes sharply during early 2020 and declines afterward, matching real-world pandemic awareness.
