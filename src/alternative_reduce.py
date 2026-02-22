@@ -37,7 +37,7 @@ for p in paths:
     for h in args.hashtags:
         d = counts.get(h, {})
         if isinstance(d, dict):
-            series[h].append(sum(d.values()))
+            series[h].append(sum(d.values()) + 1)
         else:
             series[h].append(0)
 
@@ -48,7 +48,9 @@ for h in args.hashtags:
     plt.plot(dates, series[h], label=h)
 
 plt.xlabel("Day of year (2020)")
-plt.ylabel("Tweet count")
+plt.ylabel("Tweet count (log scale, +1)")
+plt.yscale("log")
+
 plt.legend()
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
