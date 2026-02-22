@@ -22,12 +22,12 @@ This project analyzes **~1.1 billion geotagged tweets from 2020** using a MapRed
 ## Results
 
 ### Top languages and countries for #coronavirus
-![Top languages for #coronavirus](plots/all.lang__%23coronavirus__count.png)
-![Top countries for #coronavirus](plots/all.country__%23coronavirus__count.png)
+![Top languages for #coronavirus](plots/lang_coronavirus.png)
+![Top countries for #coronavirus](plots/country_coronavirus.png)
 
 ### Top languages and countries for #코로나바이러스
-![Top languages for #코로나바이러스](plots/all.lang__%23%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4__count.png)
-![Top countries for #코로나바이러스](plots/all.country__%23%EC%BD%94%EB%A1%9C%EB%82%98%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4__count.png)
+![Top languages for #코로나바이러스](plots/lang_korean_hashtag.png)
+![Top countries for #코로나바이러스](plots/country_korean_hashtag.png)
 
 ### Hashtag usage over time (2020)
 ![Hashtag time series](plots/hashtag_timeseries.png)
