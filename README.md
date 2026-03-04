@@ -28,11 +28,11 @@ Because the dataset is too large for traditional analysis, I implemented a paral
 ![Top countries](plots/country_korean_hashtag.png)
 
 ### Hashtag usage over time (2020)
-- The blue line indicates hashtags in English and the orange line indicates hashtags in Korean (#코로나바이러스)
+- The blue line indicates the english hashtag (#coronavirus) and the orange line indicates the Korean hashtag (#코로나바이러스).
 ![Time series](plots/hashtag_timeseries.png)
 
 ## Key Findings
 - The English hashtag appears broadly across countries/languages.
 - The Korean hashtag is concentrated in South Korea and mostly in Korean-language tweets.
-- One of the reasons for low use of (#코로나바이러스) can be due to the tweet being written in Korean, but with english hashtags. 
+- One of the reasons for low use of (#코로나바이러스) can be due to the tweet being written in Korean, but with english hashtag attached to them. 
 - Both show a large spike in early 2020 followed by decline through the year.
